@@ -21,7 +21,7 @@ const ScoreBadge = ({ score }: { score: number }) => {
             <img
                 src={score > 69 ? "/icons/check.svg" : "/icons/warning.svg"}
                 alt="score"
-                className="size-4"
+                className="w-4 h-4"
             />
             <p
                 className={cn(
@@ -65,20 +65,18 @@ const CategoryContent = ({
                 {tips.map((tip, index) => (
                     <div className="flex flex-row gap-2 items-center" key={index}>
                         <img
-                            src={
-                                tip.type === "good" ? "/icons/check.svg" : "/icons/warning.svg"
-                            }
+                            src={tip.type === "good" ? "/icons/check.svg" : "/icons/warning.svg"}
                             alt="score"
-                            className="size-5"
+                            className="w-5 h-5"
                         />
-                        <p className="text-xl text-gray-500 ">{tip.tip}</p>
+                        <p className="text-xl text-gray-500">{tip.tip}</p>
                     </div>
                 ))}
             </div>
             <div className="flex flex-col gap-4 w-full">
                 {tips.map((tip, index) => (
                     <div
-                        key={index + tip.tip}
+                        key={tip.tip + index}
                         className={cn(
                             "flex flex-col gap-2 rounded-2xl p-4",
                             tip.type === "good"
@@ -88,13 +86,9 @@ const CategoryContent = ({
                     >
                         <div className="flex flex-row gap-2 items-center">
                             <img
-                                src={
-                                    tip.type === "good"
-                                        ? "/icons/check.svg"
-                                        : "/icons/warning.svg"
-                                }
+                                src={tip.type === "good" ? "/icons/check.svg" : "/icons/warning.svg"}
                                 alt="score"
-                                className="size-5"
+                                className="w-5 h-5"
                             />
                             <p className="text-xl font-semibold">{tip.tip}</p>
                         </div>

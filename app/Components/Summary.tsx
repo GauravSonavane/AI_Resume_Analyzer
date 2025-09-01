@@ -1,10 +1,14 @@
-import ScoreGauge from "~/components/ScoreGauge";
-import ScoreBadge from "~/components/ScoreBadge";
+import ScoreGauge from "~/Components/ScoreGauge";
+import ScoreBadge from "~/Components/ScoreBadge";
 
-const Category = ({ title, score }: { title: string, score: number }) => {
-    const textColor = score > 70 ? 'text-green-600'
-        : score > 49
-            ? 'text-yellow-600' : 'text-red-600';
+interface CategoryProps {
+    title: string;
+    score: number;
+}
+
+const Category: React.FC<CategoryProps> = ({ title, score }) => {
+    const textColor =
+        score > 70 ? "text-green-600" : score > 49 ? "text-yellow-600" : "text-red-600";
 
     return (
         <div className="resume-summary">
@@ -18,14 +22,20 @@ const Category = ({ title, score }: { title: string, score: number }) => {
                 </p>
             </div>
         </div>
-    )
+    );
+};
+
+interface SummaryProps {
+    feedback: Feedback;
 }
 
-const Summary = ({ feedback }: { feedback: Feedback }) => {
+const Summary: React.FC<SummaryProps> = ({ feedback }) => {
+    const { overallScore, toneAndStyle, content, structure, skills } = feedback;
+
     return (
         <div className="bg-white rounded-2xl shadow-md w-full">
             <div className="flex flex-row items-center p-4 gap-8">
-                <ScoreGauge score={feedback.overallScore} />
+                <ScoreGauge score={overallScore} />
 
                 <div className="flex flex-col gap-2">
                     <h2 className="text-2xl font-bold">Your Resume Score</h2>
@@ -35,11 +45,12 @@ const Summary = ({ feedback }: { feedback: Feedback }) => {
                 </div>
             </div>
 
-            <Category title="Tone & Style" score={feedback.toneAndStyle.score} />
-            <Category title="Content" score={feedback.content.score} />
-            <Category title="Structure" score={feedback.structure.score} />
-            <Category title="Skills" score={feedback.skills.score} />
+            <Category title="Tone & Style" score={toneAndStyle.score} />
+            <Category title="Content" score={content.score} />
+            <Category title="Structure" score={structure.score} />
+            <Category title="Skills" score={skills.score} />
         </div>
-    )
-}
-export default Summary
+    );
+};
+
+export default Summary;

@@ -1,4 +1,11 @@
-const ScoreCircle = ({ score = 75 }: { score: number }) => {
+import React from "react";
+
+interface ScoreCircleProps {
+    score: number;
+    size?: number; // optional size prop
+}
+
+const ScoreCircle: React.FC<ScoreCircleProps> = ({ score, size = 100 }) => {
     const radius = 40;
     const stroke = 8;
     const normalizedRadius = radius - stroke / 2;
@@ -6,8 +13,15 @@ const ScoreCircle = ({ score = 75 }: { score: number }) => {
     const progress = score / 100;
     const strokeDashoffset = circumference * (1 - progress);
 
+    // Unique gradient ID per instance
+    const gradId = `grad-${Math.random().toString(36).substr(2, 9)}`;
+
     return (
-        <div className="relative w-[100px] h-[100px]">
+        <div
+            className="relative"
+            style={{ width: size, height: size }}
+            aria-label={`Score ${score} out of 100`}
+        >
             <svg
                 height="100%"
                 width="100%"
@@ -23,9 +37,10 @@ const ScoreCircle = ({ score = 75 }: { score: number }) => {
                     strokeWidth={stroke}
                     fill="transparent"
                 />
+
                 {/* Partial circle with gradient */}
                 <defs>
-                    <linearGradient id="grad" x1="1" y1="0" x2="0" y2="1">
+                    <linearGradient id={gradId} x1="1" y1="0" x2="0" y2="1">
                         <stop offset="0%" stopColor="#FF97AD" />
                         <stop offset="100%" stopColor="#5171FF" />
                     </linearGradient>
@@ -34,7 +49,7 @@ const ScoreCircle = ({ score = 75 }: { score: number }) => {
                     cx="50"
                     cy="50"
                     r={normalizedRadius}
-                    stroke="url(#grad)"
+                    stroke={`url(#${gradId})`}
                     strokeWidth={stroke}
                     fill="transparent"
                     strokeDasharray={circumference}
@@ -43,7 +58,7 @@ const ScoreCircle = ({ score = 75 }: { score: number }) => {
                 />
             </svg>
 
-            {/* Score and issues */}
+            {/* Score in center */}
             <div className="absolute inset-0 flex flex-col items-center justify-center">
                 <span className="font-semibold text-sm">{`${score}/100`}</span>
             </div>

@@ -1,4 +1,4 @@
-import {Link} from "react-router";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -6,10 +6,13 @@ const Navbar = () => {
             <Link to="/">
                 <p className="text-2xl font-bold text-gradient">RESUMAP</p>
             </Link>
-            <Link to="/upload" className="primary-button w-fit">
-                Upload Resume
+            <Link to="/upload">
+                <button type="button" className="primary-button w-fit">
+                    Upload Resume
+                </button>
             </Link>
         </nav>
-    )
-}
-export default Navbar
+    );
+};
+
+export default Navbar;

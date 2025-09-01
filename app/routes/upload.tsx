@@ -15,30 +15,41 @@ const Upload = () => {
     const [statusText, setStatusText] = useState("");
     const [file, setFile] = useState<File | null>(null);
 
-    const handleFileSelect = (file: File | null) => {
-        setFile(file);
-    };
+    const handleFileSelect = (file: File | null) => setFile(file);
 
     const handleAnalyze = async ({
                                      companyName,
                                      jobTitle,
                                      jobDescription,
                                      file,
-                                 }: { companyName: string; jobTitle: string; jobDescription: string; file: File }) => {
+                                 }: {
+        companyName: string;
+        jobTitle: string;
+        jobDescription: string;
+        file: File;
+    }) => {
+        setIsProcessing(true);
         try {
-            setIsProcessing(true);
-            setStatusText("Uploading the file...");
-
+            setStatusText("Uploading resume...");
             const uploadedFile = await fs.upload([file]);
-            if (!uploadedFile?.path) return setStatusText("Error: Failed to upload file");
+            if (!uploadedFile?.path) {
+                setStatusText("Error: Failed to upload file");
+                return;
+            }
 
-            setStatusText("Converting to image...");
+            setStatusText("Converting PDF to image...");
             const imageFile = await convertPdfToImage(file);
-            if (!imageFile?.file) return setStatusText("Error: Failed to convert PDF to image");
+            if (!imageFile?.file) {
+                setStatusText("Error: Failed to convert PDF to image");
+                return;
+            }
 
-            setStatusText("Uploading the image...");
+            setStatusText("Uploading image...");
             const uploadedImage = await fs.upload([imageFile.file]);
-            if (!uploadedImage?.path) return setStatusText("Error: Failed to upload image");
+            if (!uploadedImage?.path) {
+                setStatusText("Error: Failed to upload image");
+                return;
+            }
 
             setStatusText("Preparing data...");
             const uuid = generateUUID();
@@ -53,16 +64,20 @@ const Upload = () => {
             };
             await kv.set(`resume:${uuid}`, JSON.stringify(data));
 
-            setStatusText("Analyzing...");
-            const feedback = await ai.feedback(
+            setStatusText("Analyzing resume...");
+            const feedbackResponse = await ai.feedback(
                 uploadedFile.path,
                 prepareInstructions({ jobTitle, jobDescription })
             );
-            if (!feedback) return setStatusText("Error: Failed to analyze resume");
+            if (!feedbackResponse) {
+                setStatusText("Error: Failed to analyze resume");
+                return;
+            }
 
-            const feedbackText = typeof feedback.message.content === "string"
-                ? feedback.message.content
-                : feedback.message.content[0]?.text || "";
+            const feedbackText =
+                typeof feedbackResponse.message.content === "string"
+                    ? feedbackResponse.message.content
+                    : feedbackResponse.message.content[0]?.text || "";
 
             try {
                 data.feedback = JSON.parse(feedbackText);
@@ -72,19 +87,21 @@ const Upload = () => {
 
             await kv.set(`resume:${uuid}`, JSON.stringify(data));
             setStatusText("Analysis complete, redirecting...");
-            console.log(data);
             navigate(`/resume/${uuid}`);
-              } catch (err) {
-                   console.error(err);
-                   setStatusText("Unexpected error occurred. Please try again.");
-               } finally {
-                   setIsProcessing(false);
-               }
-           };
+        } catch (err) {
+            console.error(err);
+            setStatusText("Unexpected error occurred. Please try again.");
+        } finally {
+            setIsProcessing(false);
+        }
+    };
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (!file) return setStatusText("Please upload a resume before submitting.");
+        if (!file) {
+            setStatusText("Please upload a resume before submitting.");
+            return;
+        }
 
         const formData = new FormData(e.currentTarget);
         const companyName = formData.get("company-name") as string;
@@ -95,31 +112,30 @@ const Upload = () => {
     };
 
     return (
-        <main className="bg-[url('/images-01/images/bg-main.svg')] bg-cover">
+        <main className="bg-[url('/images-01/images/bg-main.svg')] bg-cover min-h-screen">
             <Navbar />
-
-            <section className="main-section">
-                <div className="page-heading py-16 ">
-                    <h1>Smart Feedback For Your Dream Job!</h1>
+            <section className="main-section py-16">
+                <div className="page-heading text-center">
+                    <h1 className="text-3xl font-bold mb-4">Smart Feedback For Your Dream Job!</h1>
 
                     {isProcessing ? (
                         <>
-                            <h2>{statusText}</h2>
+                            <h2 className="text-xl mb-4">{statusText}</h2>
                             <img
                                 src="/images-01/images/resume-scan.gif"
                                 alt="Resume scanning animation"
-                                className="w-full"
+                                className="mx-auto w-64"
                             />
                         </>
                     ) : (
-                        <h2>Drop your resume for an ATS score and improvement tips</h2>
+                        <h2 className="text-lg mb-4">Drop your resume for an ATS score and improvement tips</h2>
                     )}
 
                     {!isProcessing && (
                         <form
                             id="upload-form"
                             onSubmit={handleSubmit}
-                            className="flex flex-col gap-4 mt-8"
+                            className="flex flex-col gap-4 mt-8 max-w-xl mx-auto"
                         >
                             <div className="form-div">
                                 <label htmlFor="company-name">Company Name</label>
@@ -160,8 +176,8 @@ const Upload = () => {
                             </div>
 
                             <button
-                                className="primary-button"
                                 type="submit"
+                                className="primary-button mt-4"
                                 disabled={isProcessing}
                             >
                                 {isProcessing ? "Processing..." : "Analyze Resume"}

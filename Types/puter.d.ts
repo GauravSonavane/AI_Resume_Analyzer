@@ -54,10 +54,10 @@ interface AIResponse {
     message: {
         role: string;
         content: string | any[];
-        refusal: null | string;
+        refusal: string | null;
         annotations: any[];
     };
-    logprobs: null | any;
+    logprobs: any | null;
     finish_reason: string;
     usage: {
         type: string;
