@@ -11,6 +11,7 @@ import type { Route } from "./+types/root";
 import "./app.css";
 import { usePuterStore } from "~/lib/puter";
 import { useEffect } from "react";
+import { analytics } from "~/lib/firebase"; // ✅ Firebase import
 
 export const links: Route.LinksFunction = () => [
     { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -30,6 +31,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
     useEffect(() => {
         init();
+
+        // ✅ Firebase analytics log
+        if (analytics) {
+            console.log("Firebase analytics loaded:", analytics);
+        }
     }, [init]);
 
     return (
@@ -76,8 +82,8 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
             <p className="mt-2">{details}</p>
             {stack && (
                 <pre className="w-full p-4 overflow-x-auto bg-gray-100 rounded">
-          <code>{stack}</code>
-        </pre>
+                    <code>{stack}</code>
+                </pre>
             )}
         </main>
     );
