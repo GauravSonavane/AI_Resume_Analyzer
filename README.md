@@ -1,87 +1,62 @@
-# Welcome to React Router!
+# 📄 ResuMap – AI Resume Analyzer  
 
-A modern, production-ready template for building full-stack React applications using React Router.
+![Build](https://img.shields.io/github/actions/workflow/status/GauravSonavane/AI_Resume_Analyzer/firebase-hosting-merge.yml?branch=main)  
+![Firebase](https://img.shields.io/badge/Hosting-Firebase-orange?logo=firebase)  
+![React](https://img.shields.io/badge/Frontend-React-blue?logo=react)  
+![TypeScript](https://img.shields.io/badge/Language-TypeScript-3178C6?logo=typescript)  
+![TailwindCSS](https://img.shields.io/badge/Style-TailwindCSS-38B2AC?logo=tailwindcss)  
+![License](https://img.shields.io/badge/License-MIT-green)  
+![Contributions](https://img.shields.io/badge/Contributions-Welcome-brightgreen)  
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+🚀 AI-powered Resume Analyzer built with React & Puter.js, designed to give job seekers instant feedback on their resumes and boost their chances of passing ATS (Applicant Tracking Systems).
 
-## Features
-
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-
-## Getting Started
-
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+🔗 **Live Demo**: [resumap.web.app](https://resumap.web.app)
 
 ---
 
-Built with ❤️ using React Router.
+## ✨ Features  
+
+🔐 **Authentication** – Secure login to manage and track your resumes  
+📤 **Upload Resume (PDF)** – Store and analyze your resumes with job-specific context  
+🤖 **AI-Powered Feedback** – Get scores on Tone & Style, Content, Structure, Skills  
+📊 **ATS Compatibility Score** – See how well your resume performs against ATS filters  
+🗂 **Resume History** – Track and manage uploaded resumes  
+🎯 **Improvement Tips** – Actionable insights to refine and improve resume quality  
+
+---
+
+## 🛠 Tech Stack  
+
+![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)  
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)  
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=flat&logo=tailwindcss&logoColor=white)  
+![Puter.js](https://img.shields.io/badge/Backend-Puter.js-blueviolet)  
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat&logo=firebase&logoColor=black)  
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=FFD62E)  
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat&logo=githubactions&logoColor=white)  
+
+---
+
+## 📷 Screenshots  
+
+🔑 **Login Page**  
+📂 **Dashboard – Upload Resume**  
+📊 **Resume Feedback**  
+
+---
+
+## ⚡ Installation & Setup  
+
+```bash
+# Clone the repo
+git clone https://github.com/GauravSonavane/AI_Resume_Analyzer.git
+cd AI_Resume_Analyzer
+
+# Install dependencies
+npm install
+
+# Run locally
+npm run dev
+
+# Build for production
+npm run build
