@@ -1,62 +1,64 @@
-📄 ResuMap – AI Resume Analyzer
+# 📄 ResuMap – AI Resume Analyzer  
 
-🚀 AI-powered Resume Analyzer built with React & Puter.js, designed to give job seekers instant feedback on their resumes and boost their chances of passing ATS (Applicant Tracking Systems).
+🚀 AI-powered Resume Analyzer built with **React & Puter.js**, designed to give job seekers instant feedback on their resumes and boost their chances of passing **ATS (Applicant Tracking Systems)**.  
 
-🔗 Live Demo: resumap.web.app
+🔗 **Live Demo**: [resumap.web.app](https://resumap.web.app)  
 
-📋 Table of Contents
-✨ Introduction
-⚙️ Tech Stack
-🔋 Features
-🤸 Quick Start
-🔗 Assets
-🚀 More
+---
 
+## 📋 Table of Contents  
+- ✨ [Introduction](#-introduction)  
+- ⚙️ [Tech Stack](#%EF%B8%8F-tech-stack)  
+- 🔋 [Features](#-features)  
+- 📷 [Screenshots](#-screenshots)  
 
-✨ Introduction
+---
 
-An AI-powered Resume Analyzer with React, React Router, and Puter.js! Implement seamless auth, upload and store resumes, and match candidates to jobs using smart AI evaluations. Get custom feedback and ATS scores tailored to each listing—all wrapped in a clean, reusable UI.
+## ✨ Introduction  
 
-⚙️ Tech Stack
-React is a popular open‑source JavaScript library for building user interfaces using reusable components and a virtual DOM, enabling efficient, dynamic single-page and native apps.
+An **AI-powered Resume Analyzer** with React, React Router, and Puter.js!  
+- Seamless authentication  
+- Upload and store resumes  
+- Match candidates to jobs using smart AI evaluations  
+- Get **custom feedback** and **ATS scores** tailored to each listing  
+- All wrapped in a **clean, reusable UI**  
 
-React Router v7 is the go‑to routing library for React apps, offering nested routes, data loaders/actions, error boundaries, code splitting, and SSR support—all with a smooth upgrade path from v6.
+---
 
-Puter.com is an advanced, open-source internet operating system designed to be feature-rich, exceptionally fast, and highly extensible. Puter can be used as: A privacy-first personal cloud to keep all your files, apps, and games in one secure place, accessible from anywhere at any time.
+## ⚙️ Tech Stack  
 
-Puter.js is a tiny client‑side SDK that adds serverless auth, storage, database, and AI (GPT, Claude, DALL·E, OCR…) straight into your browser app—no backend needed and costs borne by users.
+| Technology      | Description |
+|-----------------|-------------|
+| **React**       | Open-source library for building UI with reusable components and virtual DOM. |
+| **React Router v7** | Routing library offering nested routes, loaders, error boundaries, code splitting, and SSR support. |
+| **Puter.com**   | Open-source internet OS for secure personal cloud, apps, and storage. |
+| **Puter.js**    | Client-side SDK for serverless auth, storage, database, and AI tools (GPT, Claude, DALL·E, OCR…). |
+| **Tailwind CSS**| Utility-first CSS framework for rapid UI development. |
+| **TypeScript**  | Superset of JavaScript with static typing and better tooling. |
+| **Vite**        | Fast dev server and build tool using native ES modules. |
+| **Zustand**     | Minimal, hook-based global state management library for React. |
 
-Tailwind CSS is a utility-first CSS framework that allows developers to design custom user interfaces by applying low-level utility classes directly in HTML, streamlining the design process.
+---
 
-TypeScript is a superset of JavaScript that adds static typing, providing better tooling, code quality, and error detection for developers, making it ideal for building large-scale applications.
+## 🔋 Features  
 
-Vite is a fast build tool and dev server using native ES modules for instant startup, hot‑module replacement, and Rollup‑powered production builds—perfect for modern web development.
+| Feature | Description |
+|---------|-------------|
+| 🔐 **Authentication** | Easy & convenient auth with **Puter.js** – no backend required. |
+| 📤 **Resume Upload & Storage** | Upload and manage resumes securely in one place. |
+| 🤖 **AI Resume Matching** | Provide job listings → get **ATS score** with tailored AI feedback. |
+| 🎨 **Modern UI/UX** | Clean, responsive design with **Tailwind CSS** + **shadcn/ui**. |
+| 🧩 **Reusable Components** | Modular, reusable components for efficient development. |
+| 📱 **Cross-Device Compatibility** | Fully responsive on desktop, tablet, and mobile. |
+| ⚡ **Code Architecture** | Scalable, maintainable project structure with React + Zustand. |
 
-Zustand is a minimal, hook-based state management library for React. It lets you manage global state with zero boilerplate, no context providers, and excellent performance through selective state subscriptions.
+---
 
-🔋 Features
-👉 Easy & convenient auth: Handle authentication entirely in the browser using Puter.js—no backend or setup required.
+## 📷 Screenshots  
 
-👉 Resume upload & storage: Let users upload and store all their resumes in one place, safely and reliably.
+🔑 **Login Page**  
+📂 **Dashboard – Upload Resume**  
+📊 **Resume Feedback**  
 
-👉 AI resume matching: Provide a job listing and get an ATS score with custom feedback tailored to each resume.
-
-👉 Reusable, modern UI: Built with clean, consistent components for a great-looking and maintainable interface.
-
-👉 Code Reusability: Leverage reusable components and a modular codebase for efficient development.
-
-👉 Cross-Device Compatibility: Fully responsive design that works seamlessly across all devices.
-
-👉 Modern UI/UX: Clean, responsive design built with Tailwind CSS and shadcn/ui for a sleek user experience.
-
-And many more, including code architecture and reusability.
-
-
-📷 Screenshots
-🔑 Login Page
-
-📂 Dashboard – Upload Resume
-
-📊 Resume Feedback
-
+---
 
