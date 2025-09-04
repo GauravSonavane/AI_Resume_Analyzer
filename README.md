@@ -6,7 +6,7 @@
 ![TypeScript](https://img.shields.io/badge/Code-TypeScript-3178C6?logo=typescript)  
 ![License](https://img.shields.io/badge/License-MIT-green)  
 ![Contributions](https://img.shields.io/badge/Contributions-Welcome-brightgreen)  
-
+https://camo.githubusercontent.com/a9822f294b013a48e363b6d00208716c53f59d17ed7f2bdc7436c3639e8035e3/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656163742d3463383466333f7374796c653d666f722d7468652d6261646765266c6f676f3d7265616374266c6f676f436f6c6f723d7768697465
 
 🚀 AI-powered Resume Analyzer built with React & Puter.js, designed to give job seekers instant feedback on their resumes and boost their chances of passing ATS (Applicant Tracking Systems).
 
