@@ -1,44 +1,56 @@
 📄 ResuMap – AI Resume Analyzer
 
-![Build](https://img.shields.io/github/actions/workflow/status/GauravSonavane/AI_Resume_Analyzer/firebase-hosting-merge.yml?branch=main)  
-![Firebase](https://img.shields.io/badge/Hosting-Firebase-orange?logo=firebase)  
-![React](https://img.shields.io/badge/Frontend-React-blue?logo=react)  
-![TypeScript](https://img.shields.io/badge/Code-TypeScript-3178C6?logo=typescript)  
-![License](https://img.shields.io/badge/License-MIT-green)  
-![Contributions](https://img.shields.io/badge/Contributions-Welcome-brightgreen)  
-https://camo.githubusercontent.com/a9822f294b013a48e363b6d00208716c53f59d17ed7f2bdc7436c3639e8035e3/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656163742d3463383466333f7374796c653d666f722d7468652d6261646765266c6f676f3d7265616374266c6f676f436f6c6f723d7768697465
-
 🚀 AI-powered Resume Analyzer built with React & Puter.js, designed to give job seekers instant feedback on their resumes and boost their chances of passing ATS (Applicant Tracking Systems).
 
 🔗 Live Demo: resumap.web.app
 
+📋 Table of Contents
+✨ Introduction
+⚙️ Tech Stack
+🔋 Features
+🤸 Quick Start
+🔗 Assets
+🚀 More
 
 
-[Go to Heading section] (#-this-is-a-heading)
+✨ Introduction
 
-✨ Features
+An AI-powered Resume Analyzer with React, React Router, and Puter.js! Implement seamless auth, upload and store resumes, and match candidates to jobs using smart AI evaluations. Get custom feedback and ATS scores tailored to each listing—all wrapped in a clean, reusable UI.
 
-🔐 Authentication – Secure login to manage and track your resumes
+⚙️ Tech Stack
+React is a popular open‑source JavaScript library for building user interfaces using reusable components and a virtual DOM, enabling efficient, dynamic single-page and native apps.
 
-📤 Upload Resume (PDF) – Store and analyze your resumes with job-specific context
+React Router v7 is the go‑to routing library for React apps, offering nested routes, data loaders/actions, error boundaries, code splitting, and SSR support—all with a smooth upgrade path from v6.
 
-🤖 AI-Powered Feedback – Get scores on Tone & Style, Content, Structure, Skills
+Puter.com is an advanced, open-source internet operating system designed to be feature-rich, exceptionally fast, and highly extensible. Puter can be used as: A privacy-first personal cloud to keep all your files, apps, and games in one secure place, accessible from anywhere at any time.
 
-📊 ATS Compatibility Score – See how well your resume performs against ATS filters
+Puter.js is a tiny client‑side SDK that adds serverless auth, storage, database, and AI (GPT, Claude, DALL·E, OCR…) straight into your browser app—no backend needed and costs borne by users.
 
-🗂 Resume History – Track and manage uploaded resumes
+Tailwind CSS is a utility-first CSS framework that allows developers to design custom user interfaces by applying low-level utility classes directly in HTML, streamlining the design process.
 
-🎯 Improvement Tips – Actionable insights to refine and improve resume quality
+TypeScript is a superset of JavaScript that adds static typing, providing better tooling, code quality, and error detection for developers, making it ideal for building large-scale applications.
 
-🛠 Tech Stack
+Vite is a fast build tool and dev server using native ES modules for instant startup, hot‑module replacement, and Rollup‑powered production builds—perfect for modern web development.
 
-Frontend: React (TypeScript), Zustand (state management), TailwindCSS
+Zustand is a minimal, hook-based state management library for React. It lets you manage global state with zero boilerplate, no context providers, and excellent performance through selective state subscriptions.
 
-Backend: Puter.js (serverless functions)
+🔋 Features
+👉 Easy & convenient auth: Handle authentication entirely in the browser using Puter.js—no backend or setup required.
 
-Hosting & Auth: Firebase
+👉 Resume upload & storage: Let users upload and store all their resumes in one place, safely and reliably.
 
-Other Tools: GitHub Actions (CI/CD), Vite (bundler)
+👉 AI resume matching: Provide a job listing and get an ATS score with custom feedback tailored to each resume.
+
+👉 Reusable, modern UI: Built with clean, consistent components for a great-looking and maintainable interface.
+
+👉 Code Reusability: Leverage reusable components and a modular codebase for efficient development.
+
+👉 Cross-Device Compatibility: Fully responsive design that works seamlessly across all devices.
+
+👉 Modern UI/UX: Clean, responsive design built with Tailwind CSS and shadcn/ui for a sleek user experience.
+
+And many more, including code architecture and reusability.
+
 
 📷 Screenshots
 🔑 Login Page
@@ -47,47 +59,4 @@ Other Tools: GitHub Actions (CI/CD), Vite (bundler)
 
 📊 Resume Feedback
 
-⚡ Installation & Setup
 
-Clone the repo
-
-git clone https://github.com/GauravSonavane/AI_Resume_Analyzer.git
-cd AI_Resume_Analyzer
-
-
-Install dependencies
-
-npm install
-
-
-Run locally
-
-npm run dev
-
-
-Build for production
-
-npm run build
-
-🚀 Deployment
-
-The app is auto-deployed via GitHub → Firebase Hosting.
-
-Push changes to main branch → GitHub Actions → Live site updated at resumap.web.app
-.
-
-👨‍💻 Contributors
-
-Gaurav Sonavane – Developer & Project Lead
-
-Open to contributions! Feel free to fork & raise PRs 🚀
-
-📌 Future Enhancements
-
-🌐 Custom domain setup
-
-📑 Job-specific keyword suggestions
-
-🧠 Advanced NLP scoring for achievements
-
-📱 Mobile-first design improvements
